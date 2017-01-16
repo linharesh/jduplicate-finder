@@ -1,4 +1,4 @@
-package HenriqueLinhares.dev.DuplicateFinder;
+
 
 import java.io.File;
 import java.util.Scanner;
@@ -13,7 +13,7 @@ public class ConsoleInterface {
 			System.out.println("Please insert the path to the root folder: ");
 			String path = sc.nextLine();
 			file = new File(path);
-		} while (!file.exists() && !file.isDirectory());
+		} while (!file.exists() || !file.isDirectory());
 		return file;
 	}
 
