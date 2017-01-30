@@ -6,19 +6,21 @@ public class DirectoryExplorer {
 	
 	public ArrayList<IndexedFile> exploreDirectory(File directory, boolean recursively){
 		ArrayList<IndexedFile> indexedFiles = new ArrayList<IndexedFile>();
-		
 		ArrayList<File> fileList = new ArrayList<File>(Arrays.asList(directory.listFiles()));
-		
 		for (File current : fileList) {
 			if (current.isFile()){
 				indexedFiles.add(new IndexedFile(current));
 			}
-			
+		}
+		if (recursively){
+			for (File current : fileList) {
+				if (current.isDirectory()){
+					indexedFiles.addAll(exploreDirectory(current, true));
+				}
+			}
 		}
 		
 		return indexedFiles;
 	}
-	
-	
 
 }

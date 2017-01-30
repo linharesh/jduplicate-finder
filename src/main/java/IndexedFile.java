@@ -7,5 +7,9 @@ public class IndexedFile {
 	public IndexedFile(File file){
 		this.file = file;
 	}
+	
+	public String toString(){
+		return this.file.getName();
+	}
 
 }
