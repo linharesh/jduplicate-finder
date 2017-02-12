@@ -10,7 +10,7 @@ public class ApplicationController {
 		DirectoryExplorer directoryExplorer = new DirectoryExplorer();
 		ArrayList<IndexedFile> indexedFiles = directoryExplorer.exploreDirectory(rootFolder, true);
 		for (IndexedFile indexedFile :indexedFiles){
-			System.out.println(indexedFile.toString());
+			System.out.println(indexedFile.getmd5Hex());
 		}
 		
 	}
